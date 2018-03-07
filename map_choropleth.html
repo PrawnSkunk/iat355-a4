@@ -16,9 +16,9 @@
 
     var map = d3.geomap.choropleth()
         .geofile('d3-geomap/topojson/world/countries.json')
-        .colors(['green','red'])
+        .colors(['blue','green','red'])
         .column('Colour')
-        .domain([1,0])
+        .domain([2,0])
         .legend(false)
         .unitId('Country');
 
