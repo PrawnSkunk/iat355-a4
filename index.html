@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Curtis Ho // Max Proske // First Viz</title>
+    <link href="d3-geomap/css/d3.geomap.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+    <script src="d3-geomap/js/d3.geomap.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Banner -->
+<div id="banner">
+    <div id="moving-image">
+        <div class="row">
+            <div id="title">Facebook Free Basics</div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Menu -->
+<div class="navigation">
+    <div class="row">
+        <ul class="menu">
+        </ul>
+    </div>
+</div>
+
+
+<!-- Content-->
+<div class="content">
+    <div class="row">
+        <div id="cout"></div>
+
+        <!-- Questions Container -->
+        <div class="block">
+
+            <div id="map"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var map = d3.geomap.choropleth()
+        .geofile('d3-geomap/topojson/world/countries.json')
+        .colors(['blue','green','red'])
+        .column('colour')
+        .domain([2,0])
+        .legend(false)
+        .unitId('code');
+
+        d3.csv('data/freebasics.csv', function(data){
+            d3.select('#map')
+                .datum(data)
+                .call(map.draw, map);
+        });
+</script>
+</body>
+</html>

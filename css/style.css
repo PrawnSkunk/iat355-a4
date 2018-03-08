@@ -1,0 +1,219 @@
+/* Imports
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+/* Colour Scheme
+   ========================================================================== */
+
+:root {
+    --darkest: #111;
+    --darker: #333;
+    --dark: #444;
+    --light: #AAA;
+    --lighter: #CCC;
+    --lightest: #EEE;
+    --primary-dark: #18213F;
+    --primary-light: #3b5998;
+    --primary-accent: #3E353A;
+    --open: #37b24d;
+    --closed: #f03e3e;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media(max-width: 35em) {
+    .slot-panel {
+        width: auto !important;
+    }
+    .menu, #banner, h1 {
+        text-align: center;
+    }
+}
+@media(max-width: 450px) {
+    #title {
+        font-size: 12vw !important;
+    }
+    #subtitle {
+        font-size: 8.5vw !important;
+    }
+}
+
+/* HTML Elements
+   ========================================================================== */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--darker);
+    color: var(--lighter);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0 0 0.5em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--lighter);
+    margin: 1em 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.75em;
+}
+
+p a, li a {
+    font-weight: bold;
+    color: var(--primary-light);
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+
+p a:visited, li a:visited {
+    color: var(--primary-light);
+}
+
+p a:hover, li a:hover {
+    color: var(--primary-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Banner
+   ========================================================================== */
+
+#banner {
+    padding: 0;
+    margin: 0;
+    background-color: var(--primary-light);
+}
+
+#banner #moving-image {
+    padding: 4em 0 1em 0;
+    background-image: none;
+    -webkit-animation:snow 20s linear infinite;
+    -moz-animation:snow 20s linear infinite;
+    -ms-animation:snow 20s linear infinite;
+    -o-animation:snow 20s linear infinite;
+    animation:snow 20s linear infinite;
+}
+
+@keyframes snow {
+    0% 		{ background-position: 0px 4000px }
+    100% 	{ background-position: 2000px 0px }
+}
+@-webkit-keyframes snow {
+    0% 		{ background-position: 0px 0px }
+    100% 	{ background-position: 2000px 4000px }
+}
+
+#title {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 600;
+    font-size: 3.6rem;
+}
+
+#subtitle {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 2.57rem;
+}
+
+/* Menu
+   ========================================================================== */
+
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu li {
+    font-size: 1.15em;
+    display: inline;
+}
+
+.menu li + li:before{
+    content: "| ";
+    color: var(--dark);
+    padding: 0 0.75em;
+}
+
+.menu li a {
+    color: var(--light);
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.menu li.active a {
+    color: white;
+}
+
+.menu li a:hover {
+    color: white;
+}
+
+/* Content Grid
+   ========================================================================== */
+
+.content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: var(--darkest);
+    background-color: var(--lightest);
+}
+
+.row {
+    padding: 1em;
+    max-width: 45em;
+    margin: 0 auto;
+}
+
+div {
+    clear: left; /* clearfix hack */
+}
+
+.block {
+    padding-bottom: 1.5em;
+    overflow: auto; /* clearfix hack */
+}
+
+/* clearfix hack */
+.block::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Footer
+   ========================================================================== */
+
+.footer {
+    padding: 1em;
+    text-align: center;
+}
+
+/* Visualizations
+   ========================================================================== */
+
+.chart-container {
+}
+
+.bar {
+    fill: var(--primary-light);
+}
